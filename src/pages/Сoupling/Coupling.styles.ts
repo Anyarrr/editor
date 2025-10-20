@@ -14,8 +14,8 @@ export const ContainerGrid = styled(Grid)({
     alignItems: 'center',
     width: '10px',
     height: '15px',
-    backgroundColor: "black",
-    marginBottom: '10px'
+    // backgroundColor: "black",
+    marginBottom: '25px'
 
 })
 

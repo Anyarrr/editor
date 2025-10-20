@@ -4,18 +4,17 @@ import { useState } from "react"
 import { CouplingItem } from "./CouplingItem"
 
 export const Coupling = () => {
-    const [count, setCount] = useState<number[]>([])
+    const [count, setCount] = useState<number[]>([])//1
 
     const hendleCoupling = () => {
-        const newValue = count.length + 1;
-        setCount((prev) => [...prev, newValue])
+        setCount((prev) => [...prev, count.length + 1])
     }
 
-    const handleChangeCoupling = (index: number, newValue: number) => {
-        setCount((prev) =>
-          prev.map((value, i) => (i === index ? newValue : value))
-        )
-      }
+    // const handleChangeCoupling = (index: number, newValue: number) => {
+    //     setCount((prev) =>
+    //       prev.map((value, i) => (i === index ? newValue : value))
+    //     )
+    //   }
 
 
 return(
@@ -25,11 +24,11 @@ return(
         </GeneralGrid>
         {count.length > 0 && (
         <Grid>
-          {count.map((value, index) => (
+          {count.map((value) => (
             <CouplingItem
-              key={index}
+              key={value}
               value={value}
-              onChange={(newValue) => handleChangeCoupling(index, newValue)}
+              // onChange={(newValue) => handleChangeCoupling(index, newValue)}
             />
         ))}
         </Grid>

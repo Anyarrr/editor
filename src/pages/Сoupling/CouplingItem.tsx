@@ -1,18 +1,19 @@
 import { ContainerGrid } from "./Coupling.styles"
-import { TextField } from "@mui/material"
+import { TextField, Typography } from "@mui/material"
 
 interface CouplingItemProps {
   value: number;
-  onChange: (newValue: number) => void;
+  // onChange: (newValue: number) => void;
 };
 
-export const CouplingItem = ({ value, onChange }: CouplingItemProps) => {
+export const CouplingItem = ({ value }: CouplingItemProps) => {
   return (
-    <ContainerGrid>
+    <ContainerGrid >
+      <Typography>{value}</Typography>
       <TextField
-        type="number"
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
+        // type="number"
+        // value={value.toString()} 
+        // onChange={(e) => onChange(Number(e.target.value))}
         variant="outlined"
         size="small"
       />
